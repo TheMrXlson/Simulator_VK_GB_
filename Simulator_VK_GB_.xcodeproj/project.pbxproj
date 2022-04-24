@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D387FCD2C51803B15FC46BF6 /* Pods_Simulator_VK_GB_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4A414001DD687265B18D041 /* Pods_Simulator_VK_GB_.framework */; };
 		D69A2D962815E7A5008717DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69A2D952815E7A5008717DA /* AppDelegate.swift */; };
 		D69A2D982815E7A5008717DA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69A2D972815E7A5008717DA /* SceneDelegate.swift */; };
 		D69A2D9A2815E7A5008717DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69A2D992815E7A5008717DA /* ViewController.swift */; };
@@ -16,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		48C2E2C4580F26A40E2D7C92 /* Pods-Simulator_VK_GB_.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Simulator_VK_GB_.release.xcconfig"; path = "Target Support Files/Pods-Simulator_VK_GB_/Pods-Simulator_VK_GB_.release.xcconfig"; sourceTree = "<group>"; };
+		D3575F51F4FA836638CA5117 /* Pods-Simulator_VK_GB_.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Simulator_VK_GB_.debug.xcconfig"; path = "Target Support Files/Pods-Simulator_VK_GB_/Pods-Simulator_VK_GB_.debug.xcconfig"; sourceTree = "<group>"; };
 		D69A2D922815E7A5008717DA /* Simulator_VK_GB_.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Simulator_VK_GB_.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D69A2D952815E7A5008717DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D69A2D972815E7A5008717DA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +27,7 @@
 		D69A2D9E2815E7A6008717DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D69A2DA12815E7A6008717DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D69A2DA32815E7A6008717DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4A414001DD687265B18D041 /* Pods_Simulator_VK_GB_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Simulator_VK_GB_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D387FCD2C51803B15FC46BF6 /* Pods_Simulator_VK_GB_.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8D82531CAC6D8A9D998D2DD0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F4A414001DD687265B18D041 /* Pods_Simulator_VK_GB_.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A2440D31B26405E7E20A1756 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D3575F51F4FA836638CA5117 /* Pods-Simulator_VK_GB_.debug.xcconfig */,
+				48C2E2C4580F26A40E2D7C92 /* Pods-Simulator_VK_GB_.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		D69A2D892815E7A5008717DA = {
 			isa = PBXGroup;
 			children = (
 				D69A2D942815E7A5008717DA /* Simulator_VK_GB_ */,
 				D69A2D932815E7A5008717DA /* Products */,
+				A2440D31B26405E7E20A1756 /* Pods */,
+				8D82531CAC6D8A9D998D2DD0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D69A2DA62815E7A6008717DA /* Build configuration list for PBXNativeTarget "Simulator_VK_GB_" */;
 			buildPhases = (
+				376DA73740F281C960620553 /* [CP] Check Pods Manifest.lock */,
 				D69A2D8E2815E7A5008717DA /* Sources */,
 				D69A2D8F2815E7A5008717DA /* Frameworks */,
 				D69A2D902815E7A5008717DA /* Resources */,
+				9B3B83CD8CCE3EBE846E0952 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		376DA73740F281C960620553 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Simulator_VK_GB_-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9B3B83CD8CCE3EBE846E0952 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Simulator_VK_GB_/Pods-Simulator_VK_GB_-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Simulator_VK_GB_/Pods-Simulator_VK_GB_-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Simulator_VK_GB_/Pods-Simulator_VK_GB_-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D69A2D8E2815E7A5008717DA /* Sources */ = {
@@ -282,6 +351,7 @@
 		};
 		D69A2DA72815E7A6008717DA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3575F51F4FA836638CA5117 /* Pods-Simulator_VK_GB_.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -310,6 +380,7 @@
 		};
 		D69A2DA82815E7A6008717DA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 48C2E2C4580F26A40E2D7C92 /* Pods-Simulator_VK_GB_.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
