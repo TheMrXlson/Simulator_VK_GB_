@@ -11,12 +11,12 @@ class Session {
     
     var token: String = ""
     var userId: String = ""
-
+    
     convenience init(token: String, userId: String) {
-      self.init()
-      self.token = token
-      self.userId = userId
+        self.init()
+        self.token = token
+        self.userId = userId
     }
     public static let shared = Session()
     
-  }
+}

@@ -8,6 +8,7 @@ import Foundation
 import SwiftyJSON
 
 class Groups {
+    
     var name: String = ""
     var photoUrl: String = ""
     var avatar: URL? { URL(string: "\(photoUrl)") }

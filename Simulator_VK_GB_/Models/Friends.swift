@@ -15,7 +15,6 @@ class Friends {
     var friendImageUrlText = ""
     var friendAvatar: URL? { URL(string: "\(friendImageUrlText)") }
     
-    
     convenience init(json: SwiftyJSON.JSON) {
         self.init()
         
@@ -23,5 +22,4 @@ class Friends {
         self.lastName = json["last_name"].stringValue
         self.friendImageUrlText = json["photo_200_orig"].stringValue
     }
-    
 }
