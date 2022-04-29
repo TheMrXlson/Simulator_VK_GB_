@@ -19,7 +19,7 @@ class StartViewController: UIViewController {
         webView.navigationDelegate = self
         vkLogin()
     }
-    
+    // MARK: - Standart SWIFT URLComponents
     private func vkLogin() {
         
         var urlComponents = URLComponents()
