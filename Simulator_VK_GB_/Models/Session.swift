@@ -6,11 +6,12 @@
 //
 
 import Foundation
+import RealmSwift
 
-class Session {
+class Session: RealmSwift.Object {
     
-    var token: String = ""
-    var userId: String = ""
+    @Persisted var token: String = ""
+    @Persisted var userId: String = ""
     
     convenience init(token: String, userId: String) {
         self.init()
