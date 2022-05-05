@@ -7,12 +7,14 @@
 
 import Foundation
 import SwiftyJSON
+import RealmSwift
 
-class Friends {
+class Friends: Object {
     
-    var firstName = ""
-    var lastName = ""
-    var friendImageUrlText = ""
+    @Persisted(indexed: true) var friendId = ""
+    @Persisted var firstName: String
+    @Persisted var lastName: String
+    @Persisted var friendImageUrlText = ""
     var friendAvatar: URL? { URL(string: "\(friendImageUrlText)") }
     
     convenience init(json: SwiftyJSON.JSON) {
@@ -21,5 +23,6 @@ class Friends {
         self.firstName = json["first_name"].stringValue
         self.lastName = json["last_name"].stringValue
         self.friendImageUrlText = json["photo_200_orig"].stringValue
+        self.friendId = json["id"].stringValue
     }
 }

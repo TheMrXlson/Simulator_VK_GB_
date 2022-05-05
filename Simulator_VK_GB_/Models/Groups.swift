@@ -6,11 +6,12 @@
 //
 import Foundation
 import SwiftyJSON
+import RealmSwift
 
-class Groups {
+class Groups: Object {
     
-    var name: String = ""
-    var photoUrl: String = ""
+    @Persisted var name: String
+    @Persisted var photoUrl: String
     var avatar: URL? { URL(string: "\(photoUrl)") }
     
     convenience init(json: SwiftyJSON.JSON) {
@@ -20,3 +21,4 @@ class Groups {
         self.photoUrl = json["photo_100"].stringValue
     }
 }
+
