@@ -11,6 +11,7 @@ enum ApiType {
     // MARK: - Кейсы
     case getFriends
     case getGroups
+    case getNews
     //
     var userId: String { return Session.shared.userId }
     var token: String { return Session.shared.token }
@@ -36,6 +37,12 @@ enum ApiType {
                 "access_token": token,
                 "extended": "1",
                 "v": version ]
+        case .getNews:
+            return [
+                "access_token" : token,
+                "filters" : "post",
+                "count" : "10",
+                "v": version]
         }
     }
     // MARK: - Path
@@ -43,7 +50,7 @@ enum ApiType {
         switch self {
         case .getFriends: return "friends.get"
         case .getGroups: return "groups.get"
-            
+        case .getNews: return "newsfeed.get"
         }
     }
     // MARK: - Final request
@@ -56,6 +63,9 @@ enum ApiType {
             request.httpMethod = "GET"
             return request
         case .getGroups:
+            request.httpMethod = "GET"
+            return request
+        case .getNews:
             request.httpMethod = "GET"
             return request
         }

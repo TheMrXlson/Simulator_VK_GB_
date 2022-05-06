@@ -47,4 +47,26 @@ class NetworkServices {
             }
     }
     
+    func getNews(completion: @escaping (Result<[News], Error>) -> Void) {
+        AF.request(ApiType.getNews.request)
+            .validate()
+            .response { response in
+                switch response.result {
+                case .failure(let error):
+                    completion(.failure(error))
+                case .success(let data):
+                    guard let data = data,
+                          let json = try? JSON(data: data) else { return }
+                    
+                    let groupsJson = json["response"]["items"].arrayValue
+                    let groups = groupsJson.map { News(json: $0) }
+                    
+                    completion(.success(groups))
+                }
+            }
+        
+        
+        
+    }
+    
 }
