@@ -13,7 +13,7 @@ class Friends: Object {
     
     @Persisted(indexed: true) var friendId = ""
     @Persisted var firstName: String
-    @Persisted var lastName: String
+    @Persisted var secondName: String
     @Persisted var friendImageUrlText = ""
     var friendAvatar: URL? { URL(string: "\(friendImageUrlText)") }
     
@@ -21,7 +21,7 @@ class Friends: Object {
         self.init()
         
         self.firstName = json["first_name"].stringValue
-        self.lastName = json["last_name"].stringValue
+        self.secondName = json["last_name"].stringValue
         self.friendImageUrlText = json["photo_200_orig"].stringValue
         self.friendId = json["id"].stringValue
     }
