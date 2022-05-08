@@ -13,6 +13,8 @@
 		D6288C7F2819E4DF0058370B /* Groups.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6288C7E2819E4DF0058370B /* Groups.swift */; };
 		D6288C81281AE57D0058370B /* ApiType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6288C80281AE57D0058370B /* ApiType.swift */; };
 		D6288C86281C7C990058370B /* StartViewController + Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6288C85281C7C990058370B /* StartViewController + Delegate.swift */; };
+		D656925928280FA900CFD730 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D656925728280FA900CFD730 /* CustomTableViewCell.swift */; };
+		D656925A28280FA900CFD730 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D656925828280FA900CFD730 /* CustomTableViewCell.xib */; };
 		D6904A14282451C80041B3A7 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6904A13282451C80041B3A7 /* Session.swift */; };
 		D6904A16282451CC0041B3A7 /* RealmServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6904A15282451CC0041B3A7 /* RealmServices.swift */; };
 		D69A2D962815E7A5008717DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69A2D952815E7A5008717DA /* AppDelegate.swift */; };
@@ -31,6 +33,8 @@
 		D6288C7E2819E4DF0058370B /* Groups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Groups.swift; sourceTree = "<group>"; };
 		D6288C80281AE57D0058370B /* ApiType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiType.swift; sourceTree = "<group>"; };
 		D6288C85281C7C990058370B /* StartViewController + Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StartViewController + Delegate.swift"; sourceTree = "<group>"; };
+		D656925728280FA900CFD730 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		D656925828280FA900CFD730 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 		D6904A13282451C80041B3A7 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Session.swift; path = /Users/egorefimenko/Documents/GitHub/Simulator_VK_GB_/Simulator_VK_GB_/Models/Session.swift; sourceTree = "<absolute>"; };
 		D6904A15282451CC0041B3A7 /* RealmServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RealmServices.swift; path = /Users/egorefimenko/Documents/GitHub/Simulator_VK_GB_/Simulator_VK_GB_/API/RealmServices.swift; sourceTree = "<absolute>"; };
 		D69A2D922815E7A5008717DA /* Simulator_VK_GB_.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Simulator_VK_GB_.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,6 +106,15 @@
 			path = StartViewController;
 			sourceTree = "<group>";
 		};
+		D656925B28280FB300CFD730 /* CustomTVC */ = {
+			isa = PBXGroup;
+			children = (
+				D656925728280FA900CFD730 /* CustomTableViewCell.swift */,
+				D656925828280FA900CFD730 /* CustomTableViewCell.xib */,
+			);
+			path = CustomTVC;
+			sourceTree = "<group>";
+		};
 		D69A2D892815E7A5008717DA = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +136,7 @@
 		D69A2D942815E7A5008717DA /* Simulator_VK_GB_ */ = {
 			isa = PBXGroup;
 			children = (
+				D656925B28280FB300CFD730 /* CustomTVC */,
 				D6288C7B2819E2FA0058370B /* Models */,
 				D61824C32815FE030065AE8A /* API */,
 				D69A2D952815E7A5008717DA /* AppDelegate.swift */,
@@ -198,6 +212,7 @@
 			files = (
 				D69A2DA22815E7A6008717DA /* LaunchScreen.storyboard in Resources */,
 				D69A2D9F2815E7A6008717DA /* Assets.xcassets in Resources */,
+				D656925A28280FA900CFD730 /* CustomTableViewCell.xib in Resources */,
 				D69A2D9D2815E7A5008717DA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -253,6 +268,7 @@
 			files = (
 				D6288C86281C7C990058370B /* StartViewController + Delegate.swift in Sources */,
 				D6904A16282451CC0041B3A7 /* RealmServices.swift in Sources */,
+				D656925928280FA900CFD730 /* CustomTableViewCell.swift in Sources */,
 				D6288C7D2819E31D0058370B /* Friends.swift in Sources */,
 				D69A2D9A2815E7A5008717DA /* StartViewController.swift in Sources */,
 				D69A2D962815E7A5008717DA /* AppDelegate.swift in Sources */,
