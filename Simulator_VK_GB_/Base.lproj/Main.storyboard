@@ -41,39 +41,63 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="30" y="84"/>
+            <point key="canvasLocation" x="-267" y="84"/>
         </scene>
-        <!--Item 2-->
-        <scene sceneID="fd2-iW-nNx">
-            <objects>
-                <viewController id="1dB-T8-pMz" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="oOh-l0-YD2">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="BLi-Mi-C9D"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="ecR-II-aFL"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Taf-6u-deP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1719" y="387"/>
-        </scene>
-        <!--Item 1-->
+        <!--Друзья-->
         <scene sceneID="fBy-lM-QMV">
             <objects>
                 <viewController id="9wE-n7-QNV" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9yQ-91-GPg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="2Ci-6X-M20">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="jZa-ZD-5N5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="jZa-ZD-5N5" firstAttribute="trailing" secondItem="2Ci-6X-M20" secondAttribute="trailing" id="3S5-fW-WCS"/>
+                            <constraint firstItem="2Ci-6X-M20" firstAttribute="top" secondItem="jZa-ZD-5N5" secondAttribute="top" id="Ly0-bG-PxX"/>
+                            <constraint firstItem="jZa-ZD-5N5" firstAttribute="bottom" secondItem="2Ci-6X-M20" secondAttribute="bottom" id="X8a-Ee-Hvo"/>
+                            <constraint firstItem="2Ci-6X-M20" firstAttribute="leading" secondItem="jZa-ZD-5N5" secondAttribute="leading" id="iQB-dB-Aci"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="yRH-Nm-Ywm"/>
+                    <tabBarItem key="tabBarItem" title="Друзья" image="person.fill" catalog="system" id="yRH-Nm-Ywm"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wx0-t1-tnV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1719" y="-565"/>
+            <point key="canvasLocation" x="1777" y="-586"/>
+        </scene>
+        <!--Группы-->
+        <scene sceneID="5AX-Ub-89i">
+            <objects>
+                <viewController id="cQO-0m-Fiq" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9Hy-fT-t3R">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="iCn-A2-y65">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3HX-he-f8E"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3HX-he-f8E" firstAttribute="trailing" secondItem="iCn-A2-y65" secondAttribute="trailing" id="4JQ-WZ-TOo"/>
+                            <constraint firstItem="iCn-A2-y65" firstAttribute="top" secondItem="3HX-he-f8E" secondAttribute="top" id="gui-eo-BAP"/>
+                            <constraint firstItem="3HX-he-f8E" firstAttribute="bottom" secondItem="iCn-A2-y65" secondAttribute="bottom" id="haO-xX-mrv"/>
+                            <constraint firstItem="iCn-A2-y65" firstAttribute="leading" secondItem="3HX-he-f8E" secondAttribute="leading" id="jZn-uP-04F"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Группы" image="rectangle.3.group.bubble.left.fill" catalog="system" id="Hxp-Qh-kOg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nj5-ZD-PC4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1777" y="84"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="KCv-Sx-ww0">
@@ -86,15 +110,35 @@
                     </tabBar>
                     <connections>
                         <segue destination="9wE-n7-QNV" kind="relationship" relationship="viewControllers" id="rLd-4I-zm5"/>
-                        <segue destination="1dB-T8-pMz" kind="relationship" relationship="viewControllers" id="vDE-I4-IaF"/>
+                        <segue destination="cQO-0m-Fiq" kind="relationship" relationship="viewControllers" id="K5O-Si-CPY"/>
+                        <segue destination="YYM-Ub-bcn" kind="relationship" relationship="viewControllers" id="sr4-VV-iQI"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Noa-WK-9Qf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="829" y="84"/>
+            <point key="canvasLocation" x="694" y="84"/>
+        </scene>
+        <!--Новости-->
+        <scene sceneID="Fxu-g8-k7s">
+            <objects>
+                <viewController id="YYM-Ub-bcn" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qvU-qe-Nho">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="RyH-lS-nqI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Новости" image="newspaper.fill" catalog="system" id="fXo-NO-Aqi"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RtX-vK-GUd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1777" y="743"/>
         </scene>
     </scenes>
     <resources>
+        <image name="newspaper.fill" catalog="system" width="128" height="111"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="rectangle.3.group.bubble.left.fill" catalog="system" width="128" height="110"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
