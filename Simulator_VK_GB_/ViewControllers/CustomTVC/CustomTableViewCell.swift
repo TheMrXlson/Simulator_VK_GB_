@@ -24,14 +24,14 @@ class CustomTableViewCell: UITableViewCell {
         nameLabel.text = text
     }
     
-    func configure(friend: Friends) {
-        let url = friend.friendAvatar
+    func configure(friends: Friends) {
+        let url = friends.friendAvatar
         if let data = try? Data(contentsOf: url!)
         {
             avatarImageView.image = UIImage(data: data)
         }
         
-        nameLabel.text = friend.firstName + " " + friend.secondName
+        nameLabel.text = friends.firstName + " " + friends.secondName
     }
     
     func configure(groups: Groups) {
