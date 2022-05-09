@@ -46,7 +46,7 @@
         <!--Друзья-->
         <scene sceneID="fBy-lM-QMV">
             <objects>
-                <viewController id="9wE-n7-QNV" sceneMemberID="viewController">
+                <viewController id="9wE-n7-QNV" customClass="FriendsViewController" customModule="Simulator_VK_GB_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9yQ-91-GPg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -66,6 +66,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Друзья" image="person.fill" catalog="system" id="yRH-Nm-Ywm"/>
+                    <connections>
+                        <outlet property="tableView" destination="2Ci-6X-M20" id="gBb-PV-LqA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wx0-t1-tnV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

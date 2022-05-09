@@ -11,7 +11,7 @@ import RealmSwift
 
 class Friends: Object {
     
-    @Persisted(indexed: true) var friendId = ""
+    @Persisted(primaryKey: true) var friendId = ""
     @Persisted var firstName: String
     @Persisted var secondName: String
     @Persisted var friendImageUrlText = ""
