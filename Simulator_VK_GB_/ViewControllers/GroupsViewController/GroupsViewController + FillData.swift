@@ -18,7 +18,6 @@ extension GroupsViewController {
                 print(error)
             case let .success(groups):
                 try? RealmService.save(items: groups, update: .modified)
-                self.tableView.reloadData()
             }
         }
     }
