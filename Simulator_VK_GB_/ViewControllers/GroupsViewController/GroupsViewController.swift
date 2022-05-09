@@ -19,13 +19,9 @@ class GroupsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         loadDataFromVKToRealm()
         changeRealmCollection()
-        
         configureTableView()
-        
     }
-    
-
 }

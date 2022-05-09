@@ -16,17 +16,12 @@ class FriendsViewController: UIViewController {
     let networkServices = NetworkServices()
     var token: NotificationToken?
     var friend: Results<Friends>? = try? Realm(configuration: RealmService.deleteIfMigration).objects(Friends.self)
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         loadDataFromVKToRealm()
         changeRealmCollection()
-        
         configureTableView()
-
     }
-    
 }
