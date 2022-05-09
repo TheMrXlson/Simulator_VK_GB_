@@ -17,7 +17,7 @@ extension FriendsViewController {
             case let .failure(error):
                 print(error)
             case let .success(friend):
-                try? self.realm.save(items: friend, update: .modified)
+                try? RealmService.save(items: friend, update: .modified)
                 self.tableView.reloadData()
             }
         }

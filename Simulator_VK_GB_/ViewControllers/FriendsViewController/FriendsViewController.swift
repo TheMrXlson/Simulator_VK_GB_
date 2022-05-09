@@ -15,7 +15,6 @@ class FriendsViewController: UIViewController {
     let reuseIdentifier = "customCellReuseIdentifier"
     let networkServices = NetworkServices()
     var token: NotificationToken?
-    var realm = RealmService()
     var friend: Results<Friends>? = try? Realm(configuration: RealmService.deleteIfMigration).objects(Friends.self)
     
 

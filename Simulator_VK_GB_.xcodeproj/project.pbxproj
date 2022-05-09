@@ -18,6 +18,10 @@
 		D65692612828442100CFD730 /* FriendsViewController + TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65692602828442100CFD730 /* FriendsViewController + TableViewDataSource.swift */; };
 		D65692632828443400CFD730 /* FriendsViewController + TableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65692622828443400CFD730 /* FriendsViewController + TableViewDelegate.swift */; };
 		D656926828284CD200CFD730 /* FriendsViewController + FillData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65692642828482700CFD730 /* FriendsViewController + FillData.swift */; };
+		D656926A28292D7800CFD730 /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D656926928292D7800CFD730 /* GroupsViewController.swift */; };
+		D656926C28292DA700CFD730 /* GroupsViewController + TableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D656926B28292DA700CFD730 /* GroupsViewController + TableViewDelegate.swift */; };
+		D656926E28292DC200CFD730 /* GroupsViewController + TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D656926D28292DC100CFD730 /* GroupsViewController + TableViewDataSource.swift */; };
+		D656927028292DD600CFD730 /* GroupsViewController + FillData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D656926F28292DD600CFD730 /* GroupsViewController + FillData.swift */; };
 		D6904A14282451C80041B3A7 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6904A13282451C80041B3A7 /* Session.swift */; };
 		D6904A16282451CC0041B3A7 /* RealmServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6904A15282451CC0041B3A7 /* RealmServices.swift */; };
 		D69A2D962815E7A5008717DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69A2D952815E7A5008717DA /* AppDelegate.swift */; };
@@ -41,6 +45,10 @@
 		D65692602828442100CFD730 /* FriendsViewController + TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FriendsViewController + TableViewDataSource.swift"; sourceTree = "<group>"; };
 		D65692622828443400CFD730 /* FriendsViewController + TableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FriendsViewController + TableViewDelegate.swift"; sourceTree = "<group>"; };
 		D65692642828482700CFD730 /* FriendsViewController + FillData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FriendsViewController + FillData.swift"; sourceTree = "<group>"; };
+		D656926928292D7800CFD730 /* GroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewController.swift; sourceTree = "<group>"; };
+		D656926B28292DA700CFD730 /* GroupsViewController + TableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GroupsViewController + TableViewDelegate.swift"; sourceTree = "<group>"; };
+		D656926D28292DC100CFD730 /* GroupsViewController + TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GroupsViewController + TableViewDataSource.swift"; sourceTree = "<group>"; };
+		D656926F28292DD600CFD730 /* GroupsViewController + FillData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GroupsViewController + FillData.swift"; sourceTree = "<group>"; };
 		D6904A13282451C80041B3A7 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Session.swift; path = /Users/egorefimenko/Documents/GitHub/Simulator_VK_GB_/Simulator_VK_GB_/Models/Session.swift; sourceTree = "<absolute>"; };
 		D6904A15282451CC0041B3A7 /* RealmServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RealmServices.swift; path = /Users/egorefimenko/Documents/GitHub/Simulator_VK_GB_/Simulator_VK_GB_/API/RealmServices.swift; sourceTree = "<absolute>"; };
 		D69A2D922815E7A5008717DA /* Simulator_VK_GB_.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Simulator_VK_GB_.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,9 +103,9 @@
 		D6288C7B2819E2FA0058370B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D6288C7E2819E4DF0058370B /* Groups.swift */,
 				D6288C7C2819E31D0058370B /* Friends.swift */,
 				D6904A13282451C80041B3A7 /* Session.swift */,
-				D6288C7E2819E4DF0058370B /* Groups.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -137,8 +145,20 @@
 				D656925B28280FB300CFD730 /* CustomTVC */,
 				D65692662828482C00CFD730 /* FriendsViewController */,
 				D6288C82281C7BA60058370B /* StartViewController */,
+				D656927128292DDA00CFD730 /* GroupsViewController */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D656927128292DDA00CFD730 /* GroupsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D656926928292D7800CFD730 /* GroupsViewController.swift */,
+				D656926B28292DA700CFD730 /* GroupsViewController + TableViewDelegate.swift */,
+				D656926D28292DC100CFD730 /* GroupsViewController + TableViewDataSource.swift */,
+				D656926F28292DD600CFD730 /* GroupsViewController + FillData.swift */,
+			);
+			path = GroupsViewController;
 			sourceTree = "<group>";
 		};
 		D69A2D892815E7A5008717DA = {
@@ -292,6 +312,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D6288C86281C7C990058370B /* StartViewController + Delegate.swift in Sources */,
+				D656926C28292DA700CFD730 /* GroupsViewController + TableViewDelegate.swift in Sources */,
 				D656926828284CD200CFD730 /* FriendsViewController + FillData.swift in Sources */,
 				D6904A16282451CC0041B3A7 /* RealmServices.swift in Sources */,
 				D656925928280FA900CFD730 /* CustomTableViewCell.swift in Sources */,
@@ -299,12 +320,15 @@
 				D656925F28283C0200CFD730 /* FriendsViewController.swift in Sources */,
 				D65692632828443400CFD730 /* FriendsViewController + TableViewDelegate.swift in Sources */,
 				D69A2D9A2815E7A5008717DA /* StartViewController.swift in Sources */,
+				D656927028292DD600CFD730 /* GroupsViewController + FillData.swift in Sources */,
 				D69A2D962815E7A5008717DA /* AppDelegate.swift in Sources */,
+				D656926E28292DC200CFD730 /* GroupsViewController + TableViewDataSource.swift in Sources */,
 				D61824C02815FC680065AE8A /* NetworkServices.swift in Sources */,
 				D65692612828442100CFD730 /* FriendsViewController + TableViewDataSource.swift in Sources */,
 				D69A2D982815E7A5008717DA /* SceneDelegate.swift in Sources */,
 				D6288C7F2819E4DF0058370B /* Groups.swift in Sources */,
 				D6904A14282451C80041B3A7 /* Session.swift in Sources */,
+				D656926A28292D7800CFD730 /* GroupsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

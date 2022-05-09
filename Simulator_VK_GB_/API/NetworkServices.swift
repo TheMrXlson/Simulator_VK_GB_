@@ -37,15 +37,13 @@ class NetworkServices {
                       let json = try? JSON(data: data) else { return }
                 let friendsJson = json["response"]["items"].arrayValue
                 let friends = friendsJson.map { Friends(json: $0) }
-                DispatchQueue.main.async {
                     completion(.success(friends))
-                }
             }
         }
     }
     
     
-    func vkGroupList(completion: @escaping (Result<[Groups], Error>) -> Void) {
+    func getGroups(completion: @escaping (Result<[Groups], Error>) -> Void) {
         
         let path = "/method/groups.get"
         
@@ -65,8 +63,7 @@ class NetworkServices {
                 
                 let groupsJson = json["response"]["items"].arrayValue
                 let groups = groupsJson.map { Groups(json: $0) }
-                
-                completion(.success(groups))
+                    completion(.success(groups))
             }
         }
         
