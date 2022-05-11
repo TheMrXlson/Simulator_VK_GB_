@@ -68,5 +68,32 @@ class NetworkServices {
         }
         
     }
+    
+    func getNews(completion: @escaping (Result<[News], Error>) -> Void) {
+        
+        let path = "/method/newsfeed.get"
+        
+        let parameters: Parameters = [
+            "access_token" : token,
+            "filters" : "post",
+            "count" : "10",
+            "v": version
+        ]
+        
+        AF.request(host + path, parameters: parameters).response { response in
+                switch response.result {
+                case .failure(let error):
+                    completion(.failure(error))
+                case .success(let data):
+                    guard let data = data,
+                          let json = try? JSON(data: data) else { return }
+                    
+                    let groupsJson = json["response"]["items"].arrayValue
+                    let groups = groupsJson.map { News(json: $0) }
+                    
+                    completion(.success(groups))
+                }
+            }
+    }
 }
 
