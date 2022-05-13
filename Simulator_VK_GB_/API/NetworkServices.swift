@@ -8,6 +8,7 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
+import PromiseKit
 
 class NetworkServices {
     
@@ -37,7 +38,7 @@ class NetworkServices {
         return request
     }
     
-    func getFriends(completion: @escaping (Result<[Friends], Error>) -> Void) {
+    func getFriends() -> Promise<[Friends]> {
         
         let path = "/method/friends.get"
         
@@ -49,19 +50,22 @@ class NetworkServices {
             "name_case" : "nom",
             "v" : version
         ]
-        
+
+        let promise = Promise<[Friends]> { resolver in
         AF.request(host + path, parameters: parameters).response { response in
             switch response.result {
             case .failure(let error):
-                completion(.failure(error))
+                resolver.reject(error)
             case .success(let data):
                 guard let data = data,
                       let json = try? JSON(data: data) else { return }
                 let friendsJson = json["response"]["items"].arrayValue
                 let friends = friendsJson.map { Friends(json: $0) }
-                    completion(.success(friends))
+                resolver.fulfill(friends)
             }
         }
+    }
+        return promise
     }
     
     
