@@ -8,5 +8,6 @@ target 'Simulator_VK_GB_' do
 	pod 'Alamofire'
 	pod 'RealmSwift'
 	pod 'SwiftyJSON'
+	pod "PromiseKit", "~> 6.8"
 
 end

@@ -21,7 +21,12 @@ class TopCell: UITableViewCell {
             avatarGroup.image = UIImage(data: data)
         }
         nameGroup.text = news.name
-        publicationTime.text = "\(time.date)"
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM.YYYY HH:mm:ss"
+        let formatteddate = formatter.string(from: (String(time.date)) as? Date ?? Date())
+        publicationTime.text = "\(formatteddate)"
+        
         avatarGroup.layer.cornerRadius = avatarGroup.frame.height/2
     }
 }

@@ -12,8 +12,8 @@ class PhotoCell: UITableViewCell {
     @IBOutlet weak var photo: UIImageView!
     
     func configure(news: NewsItems) {
-        let url = URL(string: news.photoUrl)
-        if let data = try? Data(contentsOf: url!)
+        guard let url = URL(string: news.photoUrl) else {return}
+        if let data = try? Data(contentsOf: url)
         {
             photo.image = UIImage(data: data)
         }

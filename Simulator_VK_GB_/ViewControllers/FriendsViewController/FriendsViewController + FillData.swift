@@ -11,7 +11,6 @@ import RealmSwift
 extension FriendsViewController {
     
     func loadDataFromVKToRealm() {
-
         networkServices.getFriends { result in
             switch result {
             case let .failure(error):

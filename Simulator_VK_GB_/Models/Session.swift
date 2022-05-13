@@ -8,10 +8,10 @@
 import Foundation
 import RealmSwift
 
-class Session: RealmSwift.Object {
+class Session {
     
-    @Persisted var token: String = ""
-    @Persisted var userId: String = ""
+    var token: String = ""
+    var userId: String = ""
     
     convenience init(token: String, userId: String) {
         self.init()
