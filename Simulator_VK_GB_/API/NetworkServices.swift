@@ -64,8 +64,7 @@ class NetworkServices {
         }
     }
     
-    
-    func getGroups(completion: @escaping (Result<[Groups], Error>) -> Void) {
+    func getGroups(completion: @escaping ([Groups]) -> Void) {
         
         let path = "/method/groups.get"
         
@@ -76,19 +75,14 @@ class NetworkServices {
         ]
         
         AF.request(host + path, parameters: parameters).response { response in
-            switch response.result {
-            case .failure(let error):
-                completion(.failure(error))
-            case .success(let data):
-                guard let data = data,
-                      let json = try? JSON(data: data) else { return }
-                
-                let groupsJson = json["response"]["items"].arrayValue
-                let groups = groupsJson.map { Groups(json: $0) }
-                    completion(.success(groups))
-            }
+            
+            guard let data = response.data,
+                  let json = try? JSON(data: data) else { return }
+            
+            let groupsJson = json["response"]["items"].arrayValue
+            let groups = groupsJson.map { Groups(json: $0) }
+            completion(groups)
         }
-        
     }
     
     func getNews(completion: @escaping (NewsObject) -> Void) {

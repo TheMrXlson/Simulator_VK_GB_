@@ -13,14 +13,10 @@ extension GroupsViewController {
     func loadDataFromVKToRealm() {
 
         networkServices.getGroups { result in
-            switch result {
-            case let .failure(error):
-                print(error)
-            case let .success(groups):
-                try? RealmService.save(items: groups, update: .modified)
+            
+                try? RealmService.save(items: result, update: .modified)
             }
         }
-    }
     
     func changeRealmCollection() {
         guard let groups = groups else { return }
