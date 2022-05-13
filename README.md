@@ -9,3 +9,4 @@
 AlamoFire
 SwiftyJSON
 RealmSwift
+PromiseKit
