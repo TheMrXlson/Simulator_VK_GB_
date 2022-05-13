@@ -7,21 +7,22 @@
 
 import UIKit
 import RealmSwift
+import PromiseKit
 
 extension GroupsViewController {
     
     func loadDataFromVKToRealm() {
-
-        networkServices.getGroups { result in
-            switch result {
-            case let .failure(error):
-                print(error)
-            case let .success(groups):
-                try? RealmService.save(items: groups, update: .modified)
-            }
+        
+        firstly {
+            networkServices.getGroups()
+        }.map { json in
+            json["response"]["items"].arrayValue.map{ Groups(json: $0)}
+        }.done {
+            try? RealmService.save(items: $0, update: .modified)
+        }.catch { error in
+            print(error)
         }
-    }
-    
+                                                      }
     func changeRealmCollection() {
         guard let groups = groups else { return }
         self.token = groups.observe { (change: RealmCollectionChange) in

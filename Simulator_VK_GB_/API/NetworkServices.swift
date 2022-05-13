@@ -69,7 +69,7 @@ class NetworkServices {
     }
     
     
-    func getGroups(completion: @escaping (Result<[Groups], Error>) -> Void) {
+    func getGroups() -> Promise<JSON> {
         
         let path = "/method/groups.get"
         
@@ -79,20 +79,19 @@ class NetworkServices {
             "v": version
         ]
         
+        let promise = Promise<JSON> { resolver in
         AF.request(host + path, parameters: parameters).response { response in
             switch response.result {
             case .failure(let error):
-                completion(.failure(error))
+                resolver.reject(error)
             case .success(let data):
                 guard let data = data,
                       let json = try? JSON(data: data) else { return }
-                
-                let groupsJson = json["response"]["items"].arrayValue
-                let groups = groupsJson.map { Groups(json: $0) }
-                    completion(.success(groups))
+                resolver.fulfill(json)
             }
         }
-        
+    }
+        return promise
     }
     
     func getNews(completion: @escaping (NewsObject) -> Void) {
@@ -118,3 +117,4 @@ class NetworkServices {
         }
     }
 }
+
