@@ -23,14 +23,9 @@ class RealmService {
         }
     }
     
-    static func save<T: Object>(
-        items: [T],
-        configuration: Realm.Configuration = deleteIfMigration
-    ) throws {
+    static func get<T: Object>(_ type: T.Type,
+        configuration: Realm.Configuration = deleteIfMigration) throws -> Results<T> {
         let realm = try Realm(configuration: configuration)
-        print(configuration.fileURL ?? "")
-        try realm.write {
-            realm.add(items)
-        }
+        return realm.objects(type)
     }
 }

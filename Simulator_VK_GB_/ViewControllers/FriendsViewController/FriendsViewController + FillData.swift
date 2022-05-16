@@ -14,8 +14,8 @@ extension FriendsViewController {
     func loadDataFromVKToRealm() {
         firstly {
             networkServices.getFriends()
-        }.done { friends in
-            try? RealmService.save(items: friends, update: .modified)
+        }.done {
+            try? RealmService.save(items: $0, update: .modified)
         }.catch { error in
             print(error)
         }
