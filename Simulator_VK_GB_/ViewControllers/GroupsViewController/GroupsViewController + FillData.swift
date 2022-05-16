@@ -4,20 +4,24 @@
 //
 //  Created by Egor Efimenko on 09.05.2022.
 //
-
 import UIKit
 import RealmSwift
+import PromiseKit
 
 extension GroupsViewController {
     
     func loadDataFromVKToRealm() {
-
-        networkServices.getGroups { result in
-            
-                try? RealmService.save(items: result, update: .modified)
-            }
+        
+        firstly {
+            networkServices.getGroups()
+        }.map { json in
+            json["response"]["items"].arrayValue.map{ Groups(json: $0)}
+        }.done {
+            try? RealmService.save(items: $0, update: .modified)
+        }.catch { error in
+            print(error)
         }
-    
+                                                      }
     func changeRealmCollection() {
         guard let groups = groups else { return }
         self.token = groups.observe { (change: RealmCollectionChange) in

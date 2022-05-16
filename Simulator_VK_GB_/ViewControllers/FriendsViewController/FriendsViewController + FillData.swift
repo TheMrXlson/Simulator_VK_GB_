@@ -7,17 +7,17 @@
 
 import UIKit
 import RealmSwift
+import PromiseKit
 
 extension FriendsViewController {
     
     func loadDataFromVKToRealm() {
-        networkServices.getFriends { result in
-            switch result {
-            case let .failure(error):
-                print(error)
-            case let .success(friend):
-                try? RealmService.save(items: friend, update: .modified)
-            }
+        firstly {
+            networkServices.getFriends()
+        }.done {
+            try? RealmService.save(items: $0, update: .modified)
+        }.catch { error in
+            print(error)
         }
     }
     
