@@ -16,16 +16,15 @@ class TopCell: UITableViewCell {
     func configure(news:NewsGroups, time:NewsItems) {
         
         let url = URL(string: news.photo_50)
-        if let data = try? Data(contentsOf: url!)
-        {
-            avatarGroup.image = UIImage(data: data)
-        }
+        avatarGroup.kf.setImage(with: url)
+        
         nameGroup.text = news.name
         
         let formatter = DateFormatter()
         formatter.dateFormat = "dd.MM.YYYY HH:mm:ss"
-        let formatteddate = formatter.string(from: (String(time.date)) as? Date ?? Date())
-        publicationTime.text = "\(formatteddate)"
+        
+        let formatteddate = formatter.date(from: time.date)
+        publicationTime.text = "\(formatteddate ?? Date())"
         
         avatarGroup.layer.cornerRadius = avatarGroup.frame.height/2
     }
