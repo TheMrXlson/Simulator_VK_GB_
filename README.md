@@ -5,9 +5,9 @@
 Сейчас добавляю экран с новостями
 Первый экран получение токена VK API
 
-Использую 
-AlamoFire\n
-SwiftyJSON/n
-RealmSwift/n
-PromiseKit/n
-Kingfisher
+Использую  
+AlamoFire,
+SwiftyJSON,  
+RealmSwift,
+PromiseKit,    
+Kingfisher.
