@@ -9,5 +9,6 @@ target 'Simulator_VK_GB_' do
 	pod 'RealmSwift'
 	pod 'SwiftyJSON'
 	pod "PromiseKit", "~> 6.8"
+	pod 'Kingfisher', '~> 7.0'
 
 end

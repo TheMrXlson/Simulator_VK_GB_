@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PromiseKit
 
 class NewsViewController: UIViewController {
 
@@ -16,14 +17,18 @@ class NewsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableView.delegate = self
         tableView.dataSource = self
         
-        network.getNews { [weak self] result in
-            self?.news = result
-            self?.tableView.reloadData()
+        firstly {
+            network.getNews()
+        }.done {
+            self.news = $0
+            self.tableView.reloadData()
+        }.catch { error in
+            print(error)
         }
-
     }
 
 }

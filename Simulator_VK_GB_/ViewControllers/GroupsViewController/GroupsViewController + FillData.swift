@@ -11,7 +11,7 @@ import PromiseKit
 extension GroupsViewController {
     
     func loadDataFromVKToRealm() {
-        
+       // Вариант с раскрытием в PromiseKit
         firstly {
             networkServices.getGroups()
         }.map { json in

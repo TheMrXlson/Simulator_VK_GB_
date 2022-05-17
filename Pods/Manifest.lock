@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.6.1)
+  - Kingfisher (7.2.2)
   - PromiseKit (6.17.1):
     - PromiseKit/CorePromise (= 6.17.1)
     - PromiseKit/Foundation (= 6.17.1)
@@ -18,6 +19,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - Kingfisher (~> 7.0)
   - PromiseKit (~> 6.8)
   - RealmSwift
   - SwiftyJSON
@@ -25,6 +27,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - Kingfisher
     - PromiseKit
     - Realm
     - RealmSwift
@@ -32,11 +35,12 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 87bd8c952f9a4454320fce00d9cc3de57bcadaf5
+  Kingfisher: 184d4d1a8c36666e663caf8e08abe87898595c53
   PromiseKit: ee485df3d4dc570594d7e7aecae6352697dc6a4c
   Realm: 1a6e9b4f6983711655d8c0bcb6d2d29c3afbb1f3
   RealmSwift: e72669550d27082aa4fad5d176f5076cfe806245
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: dd5de2acfc57560cb074593dde1d1cc6b04f6007
+PODFILE CHECKSUM: 1f33786e74a51e35a32ae54be9c8cd7b421087b0
 
 COCOAPODS: 1.11.2

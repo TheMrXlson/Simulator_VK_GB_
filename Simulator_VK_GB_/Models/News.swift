@@ -37,7 +37,7 @@ class NewsItems {
     var repostsCount: Int = 0
     var viewsCount: Int = 0
     var photoUrl: String = ""
-    var date: Int = 0
+    var date: String = ""
     
     convenience init (json: SwiftyJSON.JSON) {
         self.init()
@@ -49,7 +49,7 @@ class NewsItems {
         self.commentsCount = json["comments"]["count"].intValue
         self.repostsCount = json["reposts"]["count"].intValue
         self.viewsCount = json["views"]["count"].intValue
-        self.date = json["date"].intValue
+        self.date = json["date"].stringValue
         
         let sizes = json["attachments"][0]["photo"]["sizes"].arrayValue
         if let photoUrl = sizes.filter ({ $0["height"] == 604 }).first {

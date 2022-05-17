@@ -50,25 +50,25 @@ class NetworkServices {
             "name_case" : "nom",
             "v" : version
         ]
-
+        
         let promise = Promise<[Friends]> { resolver in
-        AF.request(host + path, parameters: parameters).response { response in
-            switch response.result {
-            case .failure(let error):
-                resolver.reject(error)
-            case .success(let data):
-                guard let data = data,
-                      let json = try? JSON(data: data) else { return }
-                let friendsJson = json["response"]["items"].arrayValue
-                let friends = friendsJson.map { Friends(json: $0) }
-                resolver.fulfill(friends)
+            AF.request(host + path, parameters: parameters).response { response in
+                switch response.result {
+                case .failure(let error):
+                    resolver.reject(error)
+                case .success(let data):
+                    guard let data = data,
+                          let json = try? JSON(data: data) else { return }
+                    let friendsJson = json["response"]["items"].arrayValue
+                    let friends = friendsJson.map { Friends(json: $0) }
+                    resolver.fulfill(friends)
+                }
             }
         }
-    }
         return promise
     }
     
-    
+    // Вариант с раскрытием в PromiseKit
     func getGroups() -> Promise<JSON> {
         
         let path = "/method/groups.get"
@@ -80,41 +80,50 @@ class NetworkServices {
         ]
         
         let promise = Promise<JSON> { resolver in
-        AF.request(host + path, parameters: parameters).response { response in
-            switch response.result {
-            case .failure(let error):
-                resolver.reject(error)
-            case .success(let data):
-                guard let data = data,
-                      let json = try? JSON(data: data) else { return }
-                resolver.fulfill(json)
+            AF.request(host + path, parameters: parameters).response { response in
+                switch response.result {
+                case .failure(let error):
+                    resolver.reject(error)
+                case .success(let data):
+                    guard let data = data,
+                          let json = try? JSON(data: data) else { return }
+                    resolver.fulfill(json)
+                }
             }
         }
-    }
         return promise
     }
     
-    func getNews(completion: @escaping (NewsObject) -> Void) {
+    func getNews() -> Promise<NewsObject> {
         
         let path = "/method/newsfeed.get"
         
         let parameters: Parameters = [
             "access_token" : token,
             "filters" : "post",
-            "count" : "10",
+            "count" : "20",
             "v": version
         ]
-        
-        AF.request(host + path, method: .get, parameters: parameters).response { response in
-            guard let data = response.data, let json = try? JSON(data: data) else { return }
-            let newsGroupsJson = json["response"]["groups"].arrayValue
-            let newsItemJson = json["response"]["items"].arrayValue
-            let newsGroups = newsGroupsJson.map { NewsGroups(json: $0) }
-            let newsItems = newsItemJson.map { NewsItems(json: $0) }
-            let result = NewsObject(groups: newsGroups, items: newsItems)
-            
-            completion(result)
+        let promise = Promise<NewsObject> { resolver in
+            AF.request(host + path, method: .get, parameters: parameters).response { response in
+                switch response.result {
+                case .failure(let error):
+                    resolver.reject(error)
+                case .success(let data):
+                    guard let data = data,
+                          let json = try? JSON(data: data) else { return }
+                    
+                    let newsGroupsJson = json["response"]["groups"].arrayValue
+                    let newsItemJson = json["response"]["items"].arrayValue
+                    let newsGroups = newsGroupsJson.map { NewsGroups(json: $0) }
+                    let newsItems = newsItemJson.map { NewsItems(json: $0) }
+                    
+                    let result = NewsObject(groups: newsGroups, items: newsItems)
+                    resolver.fulfill(result)
+                }
+            }
         }
+        return promise
     }
 }
 
