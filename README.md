@@ -6,7 +6,7 @@
 Первый экран получение токена VK API
 
 Использую 
-AlamoFire/n
+AlamoFire\n
 SwiftyJSON/n
 RealmSwift/n
 PromiseKit/n
