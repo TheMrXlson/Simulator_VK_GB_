@@ -13,9 +13,6 @@ class PhotoCell: UITableViewCell {
     
     func configure(news: NewsItems) {
         guard let url = URL(string: news.photoUrl) else {return}
-        if let data = try? Data(contentsOf: url)
-        {
-            photo.image = UIImage(data: data)
-        }
+        photo.kf.setImage(with: url)
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CustomTableViewCell: UITableViewCell {
 
@@ -26,20 +27,14 @@ class CustomTableViewCell: UITableViewCell {
     
     func configure(friends: Friends) {
         let url = friends.friendAvatar
-        if let data = try? Data(contentsOf: url!)
-        {
-            avatarImageView.image = UIImage(data: data)
-        }
-        
+        avatarImageView.kf.setImage(with: url)
+
         nameLabel.text = friends.firstName + " " + friends.secondName
     }
     
     func configure(groups: Groups) {
         let url = groups.avatar
-        if let data = try? Data(contentsOf: url!)
-        {
-            avatarImageView.image = UIImage(data: data)
-        }
+        avatarImageView.kf.setImage(with: url)
         
         nameLabel.text = groups.name
     }
