@@ -10,9 +10,13 @@ import UIKit
 class PhotoCell: UITableViewCell {
     
     @IBOutlet weak var photo: UIImageView!
-    
-    func configure(news: NewsItems) {
-        guard let url = URL(string: news.photoUrl) else {return}
+}
+
+extension PhotoCell: PostCellProtocol {
+    func set<T>(value: T) where T : PostCellDataProtocol {
+        guard let photoUrl = value.photoUrl,
+              let url = URL(string: photoUrl) else {return}
         photo.kf.setImage(with: url)
     }
 }
+

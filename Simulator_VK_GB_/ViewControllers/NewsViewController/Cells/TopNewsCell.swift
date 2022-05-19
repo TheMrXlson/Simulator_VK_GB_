@@ -13,19 +13,15 @@ class TopCell: UITableViewCell {
     @IBOutlet weak var nameGroup: UILabel!
     @IBOutlet weak var publicationTime: UILabel!
     
-    func configure(news:NewsGroups, time:NewsItems) {
+    func configure(news: Post, group: GroupsInfo) {
         
-        let url = URL(string: news.photo_50)
+        let sourceId = news.sourceId
+        guard let selectedGroup = group.filter({ $0.id == -sourceId }).first else { return }
+
+        let url = URL(string: selectedGroup.photoGroup)
         avatarGroup.kf.setImage(with: url)
-        
-        nameGroup.text = news.name
-        
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd.MM.YYYY HH:mm:ss"
-        
-        let formatteddate = formatter.date(from: time.date)
-        publicationTime.text = "\(formatteddate ?? Date())"
-        
+        nameGroup.text = selectedGroup.name
+        publicationTime.text = news.date
         avatarGroup.layer.cornerRadius = avatarGroup.frame.height/2
     }
 }

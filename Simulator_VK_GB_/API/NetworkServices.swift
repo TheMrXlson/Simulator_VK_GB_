@@ -94,17 +94,17 @@ class NetworkServices {
         return promise
     }
     
-    func getNews() -> Promise<NewsObject> {
+    func getNews() -> Promise<News> {
         
         let path = "/method/newsfeed.get"
         
         let parameters: Parameters = [
             "access_token" : token,
             "filters" : "post",
-            "count" : "20",
+            "count" : "50",
             "v": version
         ]
-        let promise = Promise<NewsObject> { resolver in
+        let promise = Promise<News> { resolver in
             AF.request(host + path, method: .get, parameters: parameters).response { response in
                 switch response.result {
                 case .failure(let error):
@@ -115,10 +115,10 @@ class NetworkServices {
                     
                     let newsGroupsJson = json["response"]["groups"].arrayValue
                     let newsItemJson = json["response"]["items"].arrayValue
-                    let newsGroups = newsGroupsJson.map { NewsGroups(json: $0) }
-                    let newsItems = newsItemJson.map { NewsItems(json: $0) }
+                    let newsGroups = newsGroupsJson.map { GroupInfo(json: $0) }
+                    let newsItems = newsItemJson.map { Post(json: $0) }
                     
-                    let result = NewsObject(groups: newsGroups, items: newsItems)
+                    let result = News(groupsInfo: newsGroups, post: newsItems)
                     resolver.fulfill(result)
                 }
             }

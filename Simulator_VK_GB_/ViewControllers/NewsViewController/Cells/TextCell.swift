@@ -10,8 +10,10 @@ import UIKit
 class TextCell: UITableViewCell {
     
     @IBOutlet weak var textView: UILabel!
-    
-    func configure(news: NewsItems) {
-        textView.text = news.text
+}
+
+extension TextCell: PostCellProtocol {
+    func set<T>(value: T) where T : PostCellDataProtocol {
+        textView.text = value.text
     }
 }
