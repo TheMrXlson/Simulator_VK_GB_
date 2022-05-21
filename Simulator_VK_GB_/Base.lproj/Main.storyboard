@@ -156,20 +156,11 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M8P-jJ-xye">
-                                                    <rect key="frame" x="66" y="32" width="38" height="18"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <color key="textColor" red="0.49803921569999998" green="0.4941176471" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="KDm-JL-efg" firstAttribute="leading" secondItem="MRL-KM-lhC" secondAttribute="leading" constant="8" id="4Pi-MR-DMj"/>
                                                 <constraint firstItem="pzQ-cj-uh4" firstAttribute="leading" secondItem="KDm-JL-efg" secondAttribute="trailing" constant="8" id="B1J-al-aKs"/>
                                                 <constraint firstItem="KDm-JL-efg" firstAttribute="top" secondItem="MRL-KM-lhC" secondAttribute="top" constant="5" id="I5X-zc-Lbe"/>
-                                                <constraint firstItem="M8P-jJ-xye" firstAttribute="leading" secondItem="KDm-JL-efg" secondAttribute="trailing" constant="8" id="Jlq-25-zQo"/>
-                                                <constraint firstItem="M8P-jJ-xye" firstAttribute="centerY" secondItem="MRL-KM-lhC" secondAttribute="centerY" constant="11" id="O2g-3U-Azz"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="M8P-jJ-xye" secondAttribute="trailing" constant="20" symbolic="YES" id="SZN-1I-54b"/>
                                                 <constraint firstAttribute="bottom" secondItem="KDm-JL-efg" secondAttribute="bottom" constant="5" id="T8y-gu-G2Q"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="pzQ-cj-uh4" secondAttribute="trailing" constant="20" symbolic="YES" id="TNK-Zc-1lM"/>
                                                 <constraint firstItem="pzQ-cj-uh4" firstAttribute="centerY" secondItem="MRL-KM-lhC" secondAttribute="centerY" constant="-8" id="lyy-T6-qRk"/>
@@ -179,10 +170,9 @@
                                         <connections>
                                             <outlet property="avatarGroup" destination="KDm-JL-efg" id="ppx-3Z-RKu"/>
                                             <outlet property="nameGroup" destination="pzQ-cj-uh4" id="5bK-8N-pza"/>
-                                            <outlet property="publicationTime" destination="M8P-jJ-xye" id="LAs-fR-EiY"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="textNewsCellID" id="Lar-fk-eFb" customClass="TextCell" customModule="Simulator_VK_GB_" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TextCell" id="Lar-fk-eFb" customClass="TextCell" customModule="Simulator_VK_GB_" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="104.5" width="414" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lar-fk-eFb" id="fIq-Cp-ePJ">
@@ -208,15 +198,15 @@
                                             <outlet property="textView" destination="JGr-PX-GrS" id="LWt-38-5cr"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="imageNewsCellID" rowHeight="250" id="oK8-la-RPF" customClass="PhotoCell" customModule="Simulator_VK_GB_" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="150.5" width="414" height="250"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ImageCell" rowHeight="100" id="oK8-la-RPF" customClass="PhotoCell" customModule="Simulator_VK_GB_" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="150.5" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oK8-la-RPF" id="sf7-px-KGW">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gor-Tb-37e">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="250" id="BXh-XQ-1uY"/>
                                                     </constraints>
@@ -234,8 +224,41 @@
                                             <outlet property="photo" destination="gor-Tb-37e" id="bAW-6W-dvM"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" indentationWidth="10" reuseIdentifier="Image+TextCell" rowHeight="200" id="Aoy-mZ-Ikw" customClass="PhotoAndTextCell" customModule="Simulator_VK_GB_" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="250.5" width="414" height="200"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Aoy-mZ-Ikw" id="1Qc-M4-Dyx">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZO-Tx-OWW">
+                                                    <rect key="frame" x="15" y="0.0" width="384" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ktm-XF-xoa">
+                                                    <rect key="frame" x="0.0" y="30.5" width="414" height="169.5"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="Ktm-XF-xoa" secondAttribute="bottom" id="A6Q-ch-dO7"/>
+                                                <constraint firstItem="fZO-Tx-OWW" firstAttribute="top" secondItem="1Qc-M4-Dyx" secondAttribute="top" id="Aeg-cr-hWA"/>
+                                                <constraint firstAttribute="trailing" secondItem="fZO-Tx-OWW" secondAttribute="trailing" constant="15" id="OVU-Zk-xrX"/>
+                                                <constraint firstItem="fZO-Tx-OWW" firstAttribute="leading" secondItem="1Qc-M4-Dyx" secondAttribute="leading" constant="15" id="Thh-Im-iml"/>
+                                                <constraint firstItem="Ktm-XF-xoa" firstAttribute="top" secondItem="fZO-Tx-OWW" secondAttribute="bottom" constant="10" id="Wpm-4L-kQ6"/>
+                                                <constraint firstAttribute="trailing" secondItem="Ktm-XF-xoa" secondAttribute="trailing" id="rZ2-gg-Egs"/>
+                                                <constraint firstItem="Ktm-XF-xoa" firstAttribute="leading" secondItem="1Qc-M4-Dyx" secondAttribute="leading" id="wgP-8O-7Vn"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.084984438628265546" green="0.084984438628265546" blue="0.084984438628265546" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <outlet property="imageNews" destination="Ktm-XF-xoa" id="VPs-AT-5Ea"/>
+                                            <outlet property="textNews" destination="fZO-Tx-OWW" id="rCK-R0-FLg"/>
+                                        </connections>
+                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="bottomNewsCellID" rowHeight="54" id="Smm-lA-4RF" customClass="ButtonCell" customModule="Simulator_VK_GB_" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="400.5" width="414" height="54"/>
+                                        <rect key="frame" x="0.0" y="450.5" width="414" height="54"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Smm-lA-4RF" id="LXD-KK-Vqw">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="54"/>
@@ -598,7 +621,7 @@
                     </prototypes>
                 </tableView>
             </objects>
-            <point key="canvasLocation" x="1777" y="775"/>
+            <point key="canvasLocation" x="1776.8115942028987" y="774.77678571428567"/>
         </scene>
     </scenes>
     <resources>
