@@ -8,7 +8,7 @@ import UIKit
 
 extension NewsViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return news?.post.count ?? 0
+        return news?.items.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -21,8 +21,8 @@ extension NewsViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "topNewsCellID", for: indexPath) as? TopCell
             
             guard let cell = cell,
-                  let newsItems = news?.post[indexPath.section],
-                  let news = news?.groupsInfo
+                  let newsItems = news?.items[indexPath.section],
+                  let news = news?.groups
             else { return UITableViewCell() }
             
             cell.configure(news: newsItems, group: news)
@@ -30,7 +30,7 @@ extension NewsViewController: UITableViewDataSource {
             return cell
             
         case 1: // Сам пост
-            guard let data = news?.post[indexPath.section],
+            guard let data = news?.items[indexPath.section],
                   let cellId = data.postType?.rawValue, // понимаем какой тип поста для выбора верной ячейки
                   let cell = tableView.dequeueReusableCell(withIdentifier: cellId)
             else { return UITableViewCell() }
@@ -42,7 +42,7 @@ extension NewsViewController: UITableViewDataSource {
         default: // общая часть дял всех постов - количество лайков, комментариев, репостов и просмотров поста, так же их кнопки
             let cell = tableView.dequeueReusableCell(withIdentifier: "bottomNewsCellID", for: indexPath) as? ButtonCell
             
-            guard let cell = cell, let newsItems = news?.post[indexPath.section]
+            guard let cell = cell, let newsItems = news?.items[indexPath.section]
             else { return UITableViewCell() }
             
             cell.configure(news: newsItems)

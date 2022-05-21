@@ -156,12 +156,6 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FTo-53-N5W">
-                                                    <rect key="frame" x="66" y="34" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="KDm-JL-efg" firstAttribute="leading" secondItem="MRL-KM-lhC" secondAttribute="leading" constant="8" id="4Pi-MR-DMj"/>
@@ -170,15 +164,12 @@
                                                 <constraint firstAttribute="bottom" secondItem="KDm-JL-efg" secondAttribute="bottom" constant="5" id="T8y-gu-G2Q"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="pzQ-cj-uh4" secondAttribute="trailing" constant="20" symbolic="YES" id="TNK-Zc-1lM"/>
                                                 <constraint firstItem="pzQ-cj-uh4" firstAttribute="centerY" secondItem="MRL-KM-lhC" secondAttribute="centerY" constant="-8" id="lyy-T6-qRk"/>
-                                                <constraint firstItem="FTo-53-N5W" firstAttribute="leading" secondItem="KDm-JL-efg" secondAttribute="trailing" constant="8" id="rTz-oS-hg0"/>
-                                                <constraint firstItem="FTo-53-N5W" firstAttribute="top" secondItem="pzQ-cj-uh4" secondAttribute="bottom" id="vp7-jl-cuv"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.094117647060000004" green="0.094117647060000004" blue="0.1019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="avatarGroup" destination="KDm-JL-efg" id="ppx-3Z-RKu"/>
                                             <outlet property="nameGroup" destination="pzQ-cj-uh4" id="5bK-8N-pza"/>
-                                            <outlet property="publicationTime" destination="FTo-53-N5W" id="wca-oD-QV1"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TextCell" id="Lar-fk-eFb" customClass="TextCell" customModule="Simulator_VK_GB_" customModuleProvider="target">

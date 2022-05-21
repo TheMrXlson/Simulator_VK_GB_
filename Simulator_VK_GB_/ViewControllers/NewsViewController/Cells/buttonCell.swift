@@ -14,10 +14,10 @@ class ButtonCell: UITableViewCell {
     @IBOutlet weak var repostCount: UILabel!
     @IBOutlet weak var viewCount: UILabel!
     
-    func configure(news: Post) {
-        likeCount.text = "\(news.likesCount)"
-        commentCount.text = "\(news.commentsCount)"
-        repostCount.text = "\(news.repostsCount)"
-        viewCount.text = "\(news.viewsCount)"
+    func configure(news: Item) {
+        likeCount.text = "\(news.likes.count)"
+        commentCount.text = "\(news.likes.count)"
+        repostCount.text = "\(news.reposts.count)"
+        viewCount.text = "\(news.views.count)"
     }
 }

@@ -14,9 +14,15 @@ class PhotoCell: UITableViewCell {
 
 extension PhotoCell: PostCellProtocol {
     func set<T>(value: T) where T : PostCellDataProtocol {
-        guard let photoUrl = value.photoUrl,
-              let url = URL(string: photoUrl) else {return}
-        photo.kf.setImage(with: url)
+        
+        if let photoUrl = value.attachments?[0].photo?.sizes.filter ({ $0.height == 604 }).first {
+            let url = URL(string: photoUrl.url)
+            photo.kf.setImage(with: url)
+        } else {
+            guard let photoUrl = value.attachments?[0].photo?.sizes.last?.url else { return }
+            let url = URL(string: photoUrl)
+            photo.kf.setImage(with: url)
+        }
     }
 }
 

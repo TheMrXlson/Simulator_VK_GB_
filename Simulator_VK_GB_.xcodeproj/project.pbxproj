@@ -12,6 +12,7 @@
 		D6288C7D2819E31D0058370B /* Friends.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6288C7C2819E31D0058370B /* Friends.swift */; };
 		D6288C7F2819E4DF0058370B /* Groups.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6288C7E2819E4DF0058370B /* Groups.swift */; };
 		D6288C86281C7C990058370B /* StartViewController + Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6288C85281C7C990058370B /* StartViewController + Delegate.swift */; };
+		D63644F02838EA2B006FA9EF /* News Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63644EF2838EA2B006FA9EF /* News Codable.swift */; };
 		D656925928280FA900CFD730 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D656925728280FA900CFD730 /* CustomTableViewCell.swift */; };
 		D656925A28280FA900CFD730 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D656925828280FA900CFD730 /* CustomTableViewCell.xib */; };
 		D656925F28283C0200CFD730 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D656925E28283C0200CFD730 /* FriendsViewController.swift */; };
@@ -49,6 +50,7 @@
 		D6288C7C2819E31D0058370B /* Friends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friends.swift; sourceTree = "<group>"; };
 		D6288C7E2819E4DF0058370B /* Groups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Groups.swift; sourceTree = "<group>"; };
 		D6288C85281C7C990058370B /* StartViewController + Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StartViewController + Delegate.swift"; sourceTree = "<group>"; };
+		D63644EF2838EA2B006FA9EF /* News Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "News Codable.swift"; sourceTree = "<group>"; };
 		D656925728280FA900CFD730 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		D656925828280FA900CFD730 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 		D656925E28283C0200CFD730 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				D6288C7C2819E31D0058370B /* Friends.swift */,
 				D6904A13282451C80041B3A7 /* Session.swift */,
 				D6A7E1F4282C5EA800AEBD90 /* News.swift */,
+				D63644EF2838EA2B006FA9EF /* News Codable.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -233,10 +236,10 @@
 			isa = PBXGroup;
 			children = (
 				D6A7E1F9282D444600AEBD90 /* TopNewsCell.swift */,
+				D6A7E200282D447F00AEBD90 /* buttonCell.swift */,
 				D6A7E1FC282D446900AEBD90 /* TextCell.swift */,
 				D6A7E1FE282D447500AEBD90 /* PhotoCell.swift */,
 				D6D338AD28356F5E00F20CA8 /* TextAndPhotoCell.swift */,
-				D6A7E200282D447F00AEBD90 /* buttonCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -371,6 +374,7 @@
 				D6D338B02836325300F20CA8 /* NewsViewController + TableViewDataSource.swift in Sources */,
 				D656925F28283C0200CFD730 /* FriendsViewController.swift in Sources */,
 				D6D338AE28356F5E00F20CA8 /* TextAndPhotoCell.swift in Sources */,
+				D63644F02838EA2B006FA9EF /* News Codable.swift in Sources */,
 				D6D338B42836329A00F20CA8 /* NewsViewController + FillData.swift in Sources */,
 				D65692632828443400CFD730 /* FriendsViewController + TableViewDelegate.swift in Sources */,
 				D69A2D9A2815E7A5008717DA /* StartViewController.swift in Sources */,

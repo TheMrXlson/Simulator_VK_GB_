@@ -11,17 +11,15 @@ class TopCell: UITableViewCell {
     
     @IBOutlet weak var avatarGroup: UIImageView!
     @IBOutlet weak var nameGroup: UILabel!
-    @IBOutlet weak var publicationTime: UILabel!
     
-    func configure(news: Post, group: GroupsInfo) {
+    func configure(news: Item, group: [Group]) {
         
-        let sourceId = news.sourceId
+        let sourceId = news.sourceID
         guard let selectedGroup = group.filter({ $0.id == -sourceId }).first else { return }
 
-        let url = URL(string: selectedGroup.photoGroup)
+        let url = URL(string: selectedGroup.photo50)
         avatarGroup.kf.setImage(with: url)
         nameGroup.text = selectedGroup.name
-        publicationTime.text = news.date
         avatarGroup.layer.cornerRadius = avatarGroup.frame.height/2
     }
 }

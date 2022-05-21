@@ -101,7 +101,7 @@ class NetworkServices {
         let parameters: Parameters = [
             "access_token" : token,
             "filters" : "post",
-            "count" : "50",
+            "count" : "20",
             "v": version
         ]
         let promise = Promise<News> { resolver in
@@ -111,15 +111,10 @@ class NetworkServices {
                     resolver.reject(error)
                 case .success(let data):
                     guard let data = data,
-                          let json = try? JSON(data: data) else { return }
-                    
-                    let newsGroupsJson = json["response"]["groups"].arrayValue
-                    let newsItemJson = json["response"]["items"].arrayValue
-                    let newsGroups = newsGroupsJson.map { GroupInfo(json: $0) }
-                    let newsItems = newsItemJson.map { Post(json: $0) }
-                    
-                    let result = News(groupsInfo: newsGroups, post: newsItems)
-                    resolver.fulfill(result)
+                          let result = try? JSONDecoder().decode(NewsJson.self, from: data) else { return }
+                    let news = result.response
+        
+                    resolver.fulfill(news)
                 }
             }
         }
