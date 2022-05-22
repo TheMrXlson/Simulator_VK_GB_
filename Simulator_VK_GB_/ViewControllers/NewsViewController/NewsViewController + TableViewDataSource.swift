@@ -22,10 +22,11 @@ extension NewsViewController: UITableViewDataSource {
             
             guard let cell = cell,
                   let newsItems = news?.items[indexPath.section],
-                  let news = news?.groups
+                  let groupInfo = news?.groups,
+                  let profiles = news?.profiles
             else { return UITableViewCell() }
             
-            cell.configure(news: newsItems, group: news)
+            cell.configure(news: newsItems, group: groupInfo, profiles: profiles)
             
             return cell
             

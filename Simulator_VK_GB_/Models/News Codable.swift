@@ -56,7 +56,7 @@ struct Item: Codable, PostCellDataProtocol {
     
     var postType: PostType? {
         let hasImage = attachments?.first?.photo?.sizes.first?.url != nil
-        let hasText = text != nil
+        let hasText = text != ""
 
         switch(hasImage, hasText) {
         case (true, false): return .image

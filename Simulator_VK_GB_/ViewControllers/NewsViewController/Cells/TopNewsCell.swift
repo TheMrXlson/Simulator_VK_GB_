@@ -12,14 +12,27 @@ class TopCell: UITableViewCell {
     @IBOutlet weak var avatarGroup: UIImageView!
     @IBOutlet weak var nameGroup: UILabel!
     
-    func configure(news: Item, group: [Group]) {
+    func configure(news: Item, group: [Group], profiles: [Profile]) {
+        
+        
+        let url: URL?
+        let textResult: String?
         
         let sourceId = news.sourceID
-        guard let selectedGroup = group.filter({ $0.id == -sourceId }).first else { return }
-
-        let url = URL(string: selectedGroup.photo50)
+        let selectedGroup = group.filter({ $0.id == -sourceId }).first
+        
+        if selectedGroup == nil {
+            guard let selectedProfile = profiles.filter({ $0.id == sourceId }).first else { return }
+            
+            url = URL(string: selectedProfile.photo50)
+            textResult = selectedProfile.firstName + " " + selectedProfile.lastName
+        } else {
+            url = URL(string: selectedGroup!.photo50)
+            textResult = selectedGroup?.name
+        }
+        
         avatarGroup.kf.setImage(with: url)
-        nameGroup.text = selectedGroup.name
+        nameGroup.text = textResult
         avatarGroup.layer.cornerRadius = avatarGroup.frame.height/2
     }
 }
