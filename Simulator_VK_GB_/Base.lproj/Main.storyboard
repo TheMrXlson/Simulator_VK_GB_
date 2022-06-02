@@ -173,24 +173,24 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TextCell" id="Lar-fk-eFb" customClass="TextCell" customModule="Simulator_VK_GB_" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="104.5" width="414" height="46"/>
+                                        <rect key="frame" x="0.0" y="104.5" width="414" height="21"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lar-fk-eFb" id="fIq-Cp-ePJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="46"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="21"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JGr-PX-GrS">
-                                                    <rect key="frame" x="15" y="10" width="384" height="21"/>
+                                                    <rect key="frame" x="15" y="0.0" width="384" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="JGr-PX-GrS" secondAttribute="bottom" id="BvM-vY-N6c"/>
                                                 <constraint firstItem="JGr-PX-GrS" firstAttribute="leading" secondItem="fIq-Cp-ePJ" secondAttribute="leading" constant="15" id="WFH-SS-1dI"/>
                                                 <constraint firstAttribute="trailing" secondItem="JGr-PX-GrS" secondAttribute="trailing" constant="15" id="fmS-zq-fAy"/>
-                                                <constraint firstItem="JGr-PX-GrS" firstAttribute="top" secondItem="fIq-Cp-ePJ" secondAttribute="top" constant="10" id="fwG-GC-RHS"/>
-                                                <constraint firstAttribute="bottom" secondItem="JGr-PX-GrS" secondAttribute="bottom" constant="15" id="tt3-tz-JoQ"/>
+                                                <constraint firstItem="JGr-PX-GrS" firstAttribute="top" secondItem="fIq-Cp-ePJ" secondAttribute="top" id="s4F-3h-YhP"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.094117647060000004" green="0.094117647060000004" blue="0.1019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -199,7 +199,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ImageCell" rowHeight="100" id="oK8-la-RPF" customClass="PhotoCell" customModule="Simulator_VK_GB_" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="150.5" width="414" height="100"/>
+                                        <rect key="frame" x="0.0" y="125.5" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oK8-la-RPF" id="sf7-px-KGW">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
@@ -207,9 +207,6 @@
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gor-Tb-37e">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="250" id="BXh-XQ-1uY"/>
-                                                    </constraints>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
@@ -225,7 +222,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" indentationWidth="10" reuseIdentifier="Image+TextCell" rowHeight="200" id="Aoy-mZ-Ikw" customClass="PhotoAndTextCell" customModule="Simulator_VK_GB_" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="250.5" width="414" height="200"/>
+                                        <rect key="frame" x="0.0" y="225.5" width="414" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Aoy-mZ-Ikw" id="1Qc-M4-Dyx">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
@@ -239,6 +236,9 @@
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ktm-XF-xoa">
                                                     <rect key="frame" x="0.0" y="30.5" width="414" height="169.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="169.5" id="slV-AX-3Ab"/>
+                                                    </constraints>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
@@ -253,12 +253,13 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.084984438628265546" green="0.084984438628265546" blue="0.084984438628265546" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
+                                            <outlet property="imageHight" destination="slV-AX-3Ab" id="v54-uo-RSm"/>
                                             <outlet property="imageNews" destination="Ktm-XF-xoa" id="VPs-AT-5Ea"/>
                                             <outlet property="textNews" destination="fZO-Tx-OWW" id="rCK-R0-FLg"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="bottomNewsCellID" rowHeight="54" id="Smm-lA-4RF" customClass="ButtonCell" customModule="Simulator_VK_GB_" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="450.5" width="414" height="54"/>
+                                        <rect key="frame" x="0.0" y="425.5" width="414" height="54"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Smm-lA-4RF" id="LXD-KK-Vqw">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="54"/>
@@ -274,7 +275,7 @@
                                                                 <constraint firstAttribute="height" constant="25" id="abu-af-Ouf"/>
                                                             </constraints>
                                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                            <state key="normal" image="heart.fill" catalog="system"/>
+                                                            <state key="normal" image="likes_icon"/>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DuU-x6-WtA">
                                                             <rect key="frame" x="41" y="12.5" width="11" height="21"/>
@@ -289,7 +290,7 @@
                                                                 <constraint firstAttribute="width" constant="24" id="ubs-PC-KvD"/>
                                                             </constraints>
                                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                            <state key="normal" image="text.bubble.fill" catalog="system"/>
+                                                            <state key="normal" image="comments_icon"/>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UcD-OK-CLZ">
                                                             <rect key="frame" x="124" y="12.5" width="11" height="21"/>
@@ -304,10 +305,10 @@
                                                                 <constraint firstAttribute="width" constant="25" id="eaq-HT-4av"/>
                                                             </constraints>
                                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                            <state key="normal" image="shareplay" catalog="system"/>
+                                                            <state key="normal" image="reposts_icon"/>
                                                         </button>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eyes.inverse" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="scc-hO-sF9">
-                                                            <rect key="frame" x="367.5" y="14.5" width="20" height="17"/>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="views_icon" translatesAutoresizingMaskIntoConstraints="NO" id="scc-hO-sF9">
+                                                            <rect key="frame" x="367.5" y="13" width="20" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="20" id="8Kf-a2-7dl"/>
                                                                 <constraint firstAttribute="height" constant="20" id="djY-Tb-K4r"/>
@@ -626,15 +627,15 @@
     </scenes>
     <resources>
         <image name="comment" width="50" height="50"/>
-        <image name="eyes.inverse" catalog="system" width="128" height="96"/>
-        <image name="heart.fill" catalog="system" width="128" height="109"/>
+        <image name="comments_icon" width="24" height="24"/>
         <image name="like" width="50" height="50"/>
+        <image name="likes_icon" width="24" height="24"/>
         <image name="newspaper.fill" catalog="system" width="128" height="111"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="rectangle.3.group.bubble.left.fill" catalog="system" width="128" height="110"/>
+        <image name="reposts_icon" width="24" height="24"/>
         <image name="shareOption" width="50" height="50"/>
-        <image name="shareplay" catalog="system" width="128" height="73"/>
-        <image name="text.bubble.fill" catalog="system" width="128" height="110"/>
+        <image name="views_icon" width="20" height="20"/>
         <image name="vision" width="50" height="50"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

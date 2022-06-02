@@ -16,7 +16,7 @@ class ButtonCell: UITableViewCell {
     
     func configure(news: Item) {
         likeCount.text = "\(news.likes.count)"
-        commentCount.text = "\(news.likes.count)"
+        commentCount.text = "\(news.comments.count)"
         repostCount.text = "\(news.reposts.count)"
         viewCount.text = "\(news.views.count)"
     }
