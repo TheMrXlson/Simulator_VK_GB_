@@ -14,6 +14,28 @@ extension NewsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath.row {
+        case 1:
+            guard let cellType = news?.items[indexPath.section].postType else { return 0 }
+            switch cellType {
+            case .image:    // подгон высоты ячейки под пост (тип поста - только с фото)
+                guard let news = self.news?.items[indexPath.section].attachments?.first?.photo?.sizes.first(where: {$0.type == "x"})
+                else { return 0 }
+                let height = CGFloat(news.height)
+                let width = CGFloat(news.width)
+                let aspectRatio = height / width
+                let cellHight = self.tableViewWidth * aspectRatio
+                return cellHight
+            default:
+                return UITableView.automaticDimension
+            }
+            
+        default:
+            return UITableView.automaticDimension
+        }
+    }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
@@ -36,7 +58,7 @@ extension NewsViewController: UITableViewDataSource {
                   let cell = tableView.dequeueReusableCell(withIdentifier: cellId)
             else { return UITableViewCell() }
             
-            (cell as? PostCellProtocol)?.set(value: data)
+            (cell as? PostCellProtocol)?.set(value: data, tableViewWidth: self.tableViewWidth) // Для расчета высоты фото - отправляю ширину экрана устройства
             
             return cell
            
@@ -48,6 +70,17 @@ extension NewsViewController: UITableViewDataSource {
             
             cell.configure(news: newsItems)
             return cell
+        }
+    }
+    // Паттерн бесконечной ленты новостей
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        DispatchQueue.global().async {
+            guard let count = self.news?.items.count else { return }
+            let percent = Double(indexPath.section) / Double(count)
+            if percent >= 0.8, !self.isLoading {
+                self.isLoading = true
+                self.loadNextData()
+            }
         }
     }
 }

@@ -8,7 +8,7 @@
 import Foundation
 
 protocol PostCellProtocol {
-    func set<T: PostCellDataProtocol>(value: T)
+    func set<T: PostCellDataProtocol>(value: T, tableViewWidth: Double)
 }
 
 protocol PostCellDataProtocol {
@@ -23,12 +23,14 @@ struct NewsJson: Codable {
 
 // MARK: - Response
 struct News: Codable {
-    let groups: [Group]
-    let items: [Item]
-    let profiles: [Profile]
+    var groups: [Group]
+    var items: [Item]
+    var profiles: [Profile]
+    var nextFrom: String
 
     enum CodingKeys: String, CodingKey {
         case groups, items, profiles
+        case nextFrom = "next_from"
     }
 }
 
