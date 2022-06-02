@@ -13,12 +13,15 @@ class NewsViewController: UIViewController {
     
     let network = NetworkServices()
     var news: News?
+    var isLoading = false
+    var tableViewWidth: Double = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configTableView()
         loadDataFromVk()
+        tableViewWidth = Double(tableView.bounds.width)
     }
     
 }

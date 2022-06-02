@@ -101,7 +101,7 @@ class NetworkServices {
         let parameters: Parameters = [
             "access_token" : token,
             "filters" : "post",
-            "count" : "20",
+            "count" : "10",
             "v": version
         ]
         let promise = Promise<News> { resolver in
@@ -114,6 +114,31 @@ class NetworkServices {
                           let result = try? JSONDecoder().decode(NewsJson.self, from: data) else { return }
                     let news = result.response
         
+                    resolver.fulfill(news)
+                }
+            }
+        }
+        return promise
+    }
+    func getNextNews(nextFrom: String) -> Promise<News> {
+        let path = "/method/newsfeed.get"
+        
+        let parameters: Parameters = [
+            "access_token" : token,
+            "filters" : "post",
+            "count" : "10",
+            "start_from": nextFrom,
+            "v": version
+        ]
+        let promise = Promise<News> { resolver in
+            AF.request(host + path, method: .get, parameters: parameters).response { response in
+                switch response.result {
+                case .failure(let error):
+                     resolver.reject(error)
+                case .success(let data):
+                    guard let data = data,
+                          let result = try? JSONDecoder().decode(NewsJson.self, from: data) else { return }
+                    let news = result.response
                     resolver.fulfill(news)
                 }
             }

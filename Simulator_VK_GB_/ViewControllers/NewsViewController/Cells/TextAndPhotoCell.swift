@@ -11,19 +11,21 @@ class PhotoAndTextCell: UITableViewCell {
     
     @IBOutlet weak var textNews: UILabel!
     @IBOutlet weak var imageNews: UIImageView!
+    @IBOutlet weak var imageHight: NSLayoutConstraint!
     
 }
 
 extension PhotoAndTextCell: PostCellProtocol {
-    func set<T>(value: T) where T : PostCellDataProtocol {
+    func set<T>(value: T, tableViewWidth: Double) where T : PostCellDataProtocol {
         textNews.text = value.text
-        if let photoUrl = value.attachments?[0].photo?.sizes.filter ({ $0.height == 604 }).first {
-            let url = URL(string: photoUrl.url)
+        guard let photoUrl = value.attachments?[0].photo?.sizes.filter ({ $0.type == "x" }).first else { return }
+        let url = URL(string: photoUrl.url)
             imageNews.kf.setImage(with: url)
-        } else {
-            guard let photoUrl = value.attachments?[0].photo?.sizes.last?.url else { return }
-            let url = URL(string: photoUrl)
-            imageNews.kf.setImage(with: url)
-        }
+        
+        let height = CGFloat(photoUrl.height)
+        let width = CGFloat(photoUrl.width)
+        let aspectRatio = height / width
+        let resultimageHight = tableViewWidth * aspectRatio
+        imageHight.constant = resultimageHight
     }
 }
