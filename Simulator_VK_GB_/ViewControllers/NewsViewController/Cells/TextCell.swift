@@ -13,7 +13,7 @@ class TextCell: UITableViewCell {
 }
 
 extension TextCell: PostCellProtocol {
-    func set<T>(value: T) where T : PostCellDataProtocol {
+    func set<T>(value: T, tableViewWidth: Double) where T : PostCellDataProtocol {
         textView.text = value.text
     }
 }
